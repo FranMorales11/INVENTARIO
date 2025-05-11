@@ -15,6 +15,10 @@ app.use(express.json());
 /*rutas*/
 app.use("/api/categorias",categoriaRoutes)
 
+app.get('/',(req,res)=>{
+    res.send('RES API EN RENDER WITHOUT DATABASE ENDPOINTS')
+})
+
 /*CORS*/
 app.use(cors());
 

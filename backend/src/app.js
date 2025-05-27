@@ -1,7 +1,7 @@
 /* importamos el framerwork express*/
 import express from "express"
 import cors from "cors"
-import categoriaRoutes from "./routes/categorias.routes.js"
+import categoriasRoutes from "./routes/categorias.routes.js"
 import clientesRoutes from "./routes/clientes.routes.js"
 import detallesfacturaRoutes from "./routes/detalles_factura.routes.js"
 import facturasRoutes from "./routes/facturas.routes.js"
@@ -18,7 +18,7 @@ app.set("port",5000)
 app.use(express.json());
 
 /*rutas*/
-app.use("/api/categorias",categoriaRoutes)
+app.use("/api/categorias",categoriasRoutes)
 app.use("/api/clientes",clientesRoutes)
 app.use("/api/detalles_factura",detallesfacturaRoutes)
 app.use("/api/facturas",facturasRoutes)

@@ -1,18 +1,13 @@
-const url = "http://localhost:5000/api/categorias"
-/*fetch(url)
-.then(resultado=>{
-    
-    return resultado.json();
+import { obtainCategories } from "./../apiConnection/consumeApi.js";
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    getCategories();
 })
 
-.then(data=>{
-     
-     showndata(data)
-})*/
-
-function showndata(categories){
+async function getCategories(){
+    const categoriesObtained = await obtainCategories();
 const container = document.querySelector('tbody')
-categories.forEach((category)=>{
+categoriesObtained.forEach((category)=>{
     const {CategoriaID, CategoriaNombre, Descripcion, Imagen} = category
     const row = document.createElement('tr');
     row.innerHTML = `
